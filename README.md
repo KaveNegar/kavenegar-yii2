@@ -39,12 +39,21 @@ Usage
 ```php
 try{
 	$api = Yii::$app->Kavenegar->KavenegarApi();
-	$sender = "{ Sender Line }";
-	$message = "{ Message }";
-	$receptor = array("{ Receptor #1 }","{ Receptor #2 }");
+	$sender = "10004346";
+	$message = "خدمات پیام کوتاه کاوه نگار";
+	$receptor = array("09123456789","09367891011");
 	$result = $api->Send($sender,$receptor,$message);
 	if($result){
-		var_dump($result);
+		foreach($result as $r){
+			echo "messageid = $r->messageid";
+			echo "message = $r->message";
+			echo "status = $r->status";
+			echo "statustext = $r->statustext";
+			echo "sender = $r->sender";
+			echo "receptor = $r->receptor";
+			echo "date = $r->date";
+			echo "cost = $r->cost";
+		}		
 	}
 }
 catch(\Kavenegar\Exceptions\ApiException $e){
@@ -53,4 +62,40 @@ catch(\Kavenegar\Exceptions\ApiException $e){
 catch(\Kavenegar\Exceptions\HttpException $e){
 	echo $e->errorMessage();
 }
+
+/*
+sample output
+{
+    "return":
+    {
+        "status":200,
+        "message":"تایید شد"
+    },
+    "entries": 
+    [
+        {
+            "messageid":8792343,
+            "message":"خدمات پیام کوتاه کاوه نگار",
+            "status":1,
+            "statustext":"در صف ارسال",
+            "sender":"10004346",
+            "receptor":"09123456789",
+            "date":1356619709,
+            "cost":120
+        },
+        {
+            "messageid":8792344,
+            "message":"خدمات پیام کوتاه کاوه نگار",
+            "status":1,
+            "statustext":"در صف ارسال",
+            "sender":"10004346",
+            "receptor":"09367891011",
+            "date":1356619709,
+            "cost":120
+        }
+    ]
+}
+*/
+
+
 ```
