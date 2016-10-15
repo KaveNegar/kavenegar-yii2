@@ -18,8 +18,7 @@ class Kavenegar extends Component
     public function KavenegarApi()
     {
         if ($this->_api === null) {
-            $client = new \Kavenegar\KavenegarApi($this->apikey);
-            $this->_api = $client;
+           $this->_api = new \Kavenegar\KavenegarApi($this->apikey);
         }
         return $this->_api;
     }
