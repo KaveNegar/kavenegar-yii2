@@ -18,5 +18,7 @@
         "psr-4": {
             "Kavenegar\\Yii2\\": "src/"
         }
-    }
+    },
+    "minimum-stability" : "dev",
+    "prefer-stable" : true
 }
