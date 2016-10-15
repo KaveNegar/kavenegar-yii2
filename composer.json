@@ -18,6 +18,5 @@
             "Kavenegar\\Yii2\\": "src/"
         }
     },
-    "minimum-stability" : "dev",
-    "prefer-stable" : true
+    "minimum-stability" : "stable"
 }
