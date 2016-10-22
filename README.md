@@ -28,7 +28,7 @@ return [
 	'components' => [
 		'Kavenegar' => [
 			'class' => 'Kavenegar\Yii2\Kavenegar',
-			'apikey' => '{ API Key }',
+			'apikey' => '',
 		],
 	],
 ];
